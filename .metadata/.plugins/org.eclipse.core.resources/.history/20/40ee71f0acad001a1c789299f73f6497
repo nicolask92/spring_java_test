@@ -1,0 +1,32 @@
+package com.acadeu.web.app.cotrollers;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.acadeu.web.app.models.Usuarios;
+
+@Controller
+public class IndexController {
+
+	@RequestMapping({"/index",""})
+	public String index(Model model) {
+		return "index";
+	}
+	
+	@ModelAttribute("usuarios")
+	public List<Usuarios> poblarUsuarios(){
+		List<Usuarios> usuarios = new ArrayList<>();
+		
+		usuarios.add(new Usuarios("Nicolas","Kloster","niko.klos@gmail.com"));
+		usuarios.add(new Usuarios("Axel","Kloster","niko.klos@gmail.com"));
+		usuarios.add(new Usuarios("Ulises","Kloster","niko.klos@gmail.com"));
+		
+		return usuarios;
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.acadeu.web.app.cotrollers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/variables")
+public class EjemplosRutasController {
+	@GetMapping("/string/{texto}")
+	public String variables(@PathVariable String texto, Model model) {
+		model.addAttribute("titulo", "Titulo de la pagina");
+		model.addAttribute("variable", "Variable pasada: " + texto);
+		
+		return "/variables/ver";
+	}
+}

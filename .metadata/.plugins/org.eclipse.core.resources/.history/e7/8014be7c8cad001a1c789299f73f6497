@@ -1,0 +1,5 @@
+package com.acadeu.web.app.models;
+
+public class Usuarios {
+
+}
